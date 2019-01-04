@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1tg-6E-fVn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ae7-Dp-xXu">
+            <objects>
+                <tabBarController id="1tg-6E-fVn" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="09G-DY-EYL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8aU-ko-lid" kind="relationship" relationship="viewControllers" id="fTc-xM-ipX"/>
+                        <segue destination="OOK-S5-nXQ" kind="relationship" relationship="viewControllers" id="cbl-AP-PXG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJm-RS-axx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24" y="583"/>
+        </scene>
+        <!--Generate-->
+        <scene sceneID="kP7-o8-3qe">
+            <objects>
+                <viewController storyboardIdentifier="BarcodeGeneratorVC" id="8aU-ko-lid" customClass="BarcodeGeneratorVC" customModule="BarcodeGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s1T-3U-VC7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B9i-tF-blp">
+                                <rect key="frame" x="62" y="208.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="PHr-dz-ubX"/>
+                                    <constraint firstAttribute="width" constant="250" id="VUJ-HC-veP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAB-Yn-n3c">
+                                <rect key="frame" x="20" y="167.5" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B9i-tF-blp" firstAttribute="centerX" secondItem="s1T-3U-VC7" secondAttribute="centerX" id="Pcv-PR-XaQ"/>
+                            <constraint firstItem="BXV-A1-rqs" firstAttribute="trailing" secondItem="zAB-Yn-n3c" secondAttribute="trailing" constant="20" id="cLF-mt-K5S"/>
+                            <constraint firstItem="B9i-tF-blp" firstAttribute="top" secondItem="zAB-Yn-n3c" secondAttribute="bottom" constant="20" id="n9u-Uw-DiB"/>
+                            <constraint firstItem="zAB-Yn-n3c" firstAttribute="leading" secondItem="BXV-A1-rqs" secondAttribute="leading" constant="20" id="ubP-VP-tBe"/>
+                            <constraint firstItem="B9i-tF-blp" firstAttribute="centerY" secondItem="s1T-3U-VC7" secondAttribute="centerY" id="vsn-EA-ABe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BXV-A1-rqs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Generate" id="DiY-Sh-b94"/>
+                    <connections>
+                        <outlet property="imgForBarcode" destination="B9i-tF-blp" id="VO4-Ix-Gip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fH-NN-7a1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="149"/>
+        </scene>
+        <!--Scan-->
+        <scene sceneID="XR1-JH-uSP">
+            <objects>
+                <viewController storyboardIdentifier="ScannerViewController" id="OOK-S5-nXQ" customClass="ScannerViewController" customModule="BarcodeGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fSO-VH-BYW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elo-Co-Xzd">
+                                <rect key="frame" x="10" y="50" width="355" height="355"/>
+                                <color key="backgroundColor" red="0.34509803919999998" green="0.65490196079999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="elo-Co-Xzd" secondAttribute="height" multiplier="1:1" id="S6n-3C-MWK"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sra-s4-Wwy">
+                                <rect key="frame" x="20" y="435" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.34509803919999998" green="0.65490196079999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vfD-fq-5cQ"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopClick:" destination="OOK-S5-nXQ" eventType="touchUpInside" id="bUM-8B-GGb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faY-4j-Sqv">
+                                <rect key="frame" x="20" y="495" width="335" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="faY-4j-Sqv" firstAttribute="leading" secondItem="Xzj-nu-jcd" secondAttribute="leading" constant="20" id="CrJ-rb-yci"/>
+                            <constraint firstItem="sra-s4-Wwy" firstAttribute="top" secondItem="elo-Co-Xzd" secondAttribute="bottom" constant="30" id="Edv-Oy-aqf"/>
+                            <constraint firstItem="elo-Co-Xzd" firstAttribute="top" secondItem="Xzj-nu-jcd" secondAttribute="top" constant="30" id="Gu8-HW-RF9"/>
+                            <constraint firstItem="Xzj-nu-jcd" firstAttribute="trailing" secondItem="sra-s4-Wwy" secondAttribute="trailing" constant="20" id="Mk8-eX-h5K"/>
+                            <constraint firstItem="faY-4j-Sqv" firstAttribute="top" secondItem="sra-s4-Wwy" secondAttribute="bottom" constant="20" id="N6X-RE-3cM"/>
+                            <constraint firstItem="elo-Co-Xzd" firstAttribute="leading" secondItem="Xzj-nu-jcd" secondAttribute="leading" constant="10" id="Try-a8-rek"/>
+                            <constraint firstItem="Xzj-nu-jcd" firstAttribute="trailing" secondItem="elo-Co-Xzd" secondAttribute="trailing" constant="10" id="ean-7F-9qf"/>
+                            <constraint firstItem="Xzj-nu-jcd" firstAttribute="trailing" secondItem="faY-4j-Sqv" secondAttribute="trailing" constant="20" id="rEN-83-HBv"/>
+                            <constraint firstItem="sra-s4-Wwy" firstAttribute="leading" secondItem="Xzj-nu-jcd" secondAttribute="leading" constant="20" id="sN4-Pi-4AS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xzj-nu-jcd"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scan" id="jUU-dP-Uph"/>
+                    <connections>
+                        <outlet property="btnStartStop" destination="sra-s4-Wwy" id="6Cn-LD-4l5"/>
+                        <outlet property="lblString" destination="faY-4j-Sqv" id="dOF-fF-gVN"/>
+                        <outlet property="viewPreview" destination="elo-Co-Xzd" id="id6-7M-KMY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXg-qH-ybb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="888"/>
+        </scene>
+    </scenes>
+</document>
